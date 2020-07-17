@@ -28,16 +28,18 @@ class MainActivity : AppCompatActivity() {
             
         }
 
-
         false
     }
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        moveToFragment(HomeFragment())
     }
 
 
