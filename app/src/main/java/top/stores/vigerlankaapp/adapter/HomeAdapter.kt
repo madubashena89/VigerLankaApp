@@ -1,6 +1,5 @@
 package top.stores.vigerlankaapp.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,59 +8,29 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import top.stores.vigerlankaapp.R
 
-class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HomeAdapter : RecyclerView.Adapter<HomeAdapterViewHolder>() {
 
-    private val kode = arrayOf("d116df5",
-        "36ffc75", "f5cfe78", "5b87628",
-        "db8d14e", "9913dc4", "e120f96",
-        "466251b")
-
-    private val kategori = arrayOf("Kekayaan", "Teknologi",
-        "Keluarga", "Bisnis",
-        "Keluarga", "Hutang",
-        "Teknologi", "Pidana")
-
-    private val isi = arrayOf("pertanyaan 9",
-        "pertanyaan 11", "pertanyaan 17", "test forum",
-        "pertanyaan 12", "pertanyaan 18", "pertanyaan 20",
-        "pertanyaan 21")
+    private val spiceList = arrayOf("Black Pepper",
+        "Red Pepper", "Cinnamon", "Tumereic",
+        "Cummin", "Tea powder", "Packaging and Shipping")
 
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapterViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.home_card_view, parent, false)
-        return ViewHolder(v)
+        return HomeAdapterViewHolder(v)
     }
 
     override fun getItemCount(): Int {
+        return spiceList.size
+
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeAdapterViewHolder, position: Int) {
+        holder.tvHomeItem.text = spiceList[position]
+        holder.setImage(position)
+
     }
 
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var tvHomeItem: TextView
-        var imageVSpcie: ImageView
-
-
-        init {
-            tvHomeItem = itemView.findViewById(R.id.tv_home_spice_name)
-            imageVSpcie = itemView.findViewById(R.id.home_spice_image)
-
-            itemView.setOnClickListener {
-                var position: Int = getAdapterPosition()
-                val context = itemView.context
-                val intent = Intent(context, DetailPertanyaan::class.java).apply {
-                    putExtra("NUMBER", position)
-                    putExtra("CODE", itemKode.text)
-                    putExtra("CATEGORY", itemKategori.text)
-                    putExtra("CONTENT", itemIsi.text)
-                }
-                context.startActivity(intent)
-            }
-        }
-    }
 }

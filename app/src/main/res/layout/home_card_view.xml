@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,8 +21,8 @@
 
         <ImageView
             android:id="@+id/home_spice_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="107dp"
+            android:layout_height="97dp"
             android:layout_marginStart="216dp"
             android:layout_marginLeft="216dp"
             android:layout_marginTop="16dp"
@@ -40,11 +39,11 @@
             android:id="@+id/tv_home_spice_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
-            android:layout_marginLeft="61dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="56dp"
-            android:textSize="18dp"
-            android:textStyle="bold|italic"
+            android:textSize="12dp"
+            android:textStyle="bold"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
