@@ -44,7 +44,12 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
             adapter = HomeAdapter()
+
         }
     }
+
+//    private fun setImageCardContent(){
+//        adapter.
+//    }
 
 }
