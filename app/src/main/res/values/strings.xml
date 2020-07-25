@@ -14,13 +14,11 @@
     <string name="content_home_tea_powder">"Sri Lanka is one of the world's most significant exporters of orthodox teas because of the sheer volume grown and exported. The island now known as Sri Lanka was historically referred to as “Ceylon” by the British colonial powers, hence the name for Ceylon teas. "</string>
     <string name="content_home_packag_shipping">"We can export any quantity of products with your requirments as boxes, 20ft and 40ft etc. Firstly you can give the requirment and will offer you a quatation. If you want any sample we can ship first then you can place your order. Please see the contact section."</string>
 
-    <string-array name="Languages">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Swift</item>
-        <item>Python</item>
-        <item>Scala</item>
-        <item>Perl</item>
+    <string-array name="contact_reason">
+        <item>Quotation Request</item>
+        <item>General Request</item>
+        <item>Order Request</item>
+        <item>Other</item>
     </string-array>
 
 
