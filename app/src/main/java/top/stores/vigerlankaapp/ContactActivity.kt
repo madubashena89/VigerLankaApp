@@ -37,11 +37,11 @@ class ContactActivity : AppCompatActivity() {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, contactReason)
             spinner.adapter = adapter
-
+        val spinnerText = spinner.selectedItem.toString()
 
         val sendBtn = findViewById<Button>(R.id.btn_contact_send)
         sendBtn.setOnClickListener {
-            sendEmail(setSpinner(), name.text.toString(),email.text.toString(), phoneNumber.text.toString(),
+            sendEmail(spinnerText, name.text.toString(),email.text.toString(), phoneNumber.text.toString(),
                  contactMethod.text.toString(), message.text.toString() )
         }
       }
@@ -80,7 +80,6 @@ class ContactActivity : AppCompatActivity() {
 
 
     private fun setSpinner(): String{
-
 
         var contactReason = ""
         spinner.onItemSelectedListener = object :
