@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:text="Name/  Company : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:text="Email address : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -165,12 +165,10 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="Message : "
-            app:layout_constraintStart_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintStart_toStartOf="@+id/tv_contact_method"
+            app:layout_constraintTop_toBottomOf="@+id/tv_contact_method" />
 
         <EditText
             android:id="@+id/tv_contact_email"
@@ -227,7 +225,7 @@
             android:id="@+id/tv_mobile_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="18dp"
             android:text="Phone number : "
             app:layout_constraintStart_toStartOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -244,16 +242,6 @@
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="@+id/tv_contact_email"
             app:layout_constraintTop_toBottomOf="@+id/tv_contact_email" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="tv_contact_method"
-            app:layout_constraintStart_toStartOf="@+id/tv_mobile_no"
-            app:layout_constraintTop_toBottomOf="@+id/tv_mobile_no"
-            tools:text="Contact method : " />
 
         <CheckBox
             android:id="@+id/cb_email"
@@ -274,6 +262,15 @@
             android:text="Mobile / what's app"
             app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+        <TextView
+            android:id="@+id/tv_contact_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Contact method :"
+            app:layout_constraintStart_toStartOf="@+id/tv_mobile_no"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mobile_no" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
