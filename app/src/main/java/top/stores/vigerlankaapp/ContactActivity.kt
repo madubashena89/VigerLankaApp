@@ -52,30 +52,15 @@ class ContactActivity : AppCompatActivity() {
                            contactMethodEmaail : String, messageTv : String ) {
          val recipient = "vigorlankapvtltd@gmail.com"
          val recepients : Array<String> = recipient.split(",").toTypedArray()
-//         val subject = setSpinner()
-//         val name = name.text.toString()
-//         val email = email.text.toString()
-//         val phoneNo = phoneNumber.text.toString()
-//         val contactMethodEmaail = contactMethodEmail.text.toString()
-//         val contactMethdPhone = contactMethodPhone.text.toString()
-//         val message = message.text.toString()
          val message =
              "$name\n$email \n $phoneNo\n$contactMethodEmaail \n$messageTv"
 
          val intent : Intent = Intent(Intent.ACTION_SEND)
          intent.putExtra(Intent.EXTRA_EMAIL, recepients)
          intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-//         intent.putExtra(Intent.EXTRA_TEXT, name)
-//         intent.putExtra(Intent.EXTRA_TEXT, email)
-//         intent.putExtra(Intent.EXTRA_TEXT, phoneNo)
-//         intent.putExtra(Intent.EXTRA_TEXT, contactMethodEmaail)
-//         intent.putExtra(Intent.EXTRA_TEXT, contactMethdPhone)
          intent.putExtra(Intent.EXTRA_TEXT, message)
 
          intent.setType("message/rfc822")
-        // intent.setType("text/plain");
-
-         //startActivity(Intent.createChooser(intent, "Choose the email client."))
 
          try {
              startActivity(Intent.createChooser(intent, "Choose the email client."))
@@ -93,50 +78,6 @@ class ContactActivity : AppCompatActivity() {
      }
 
 
-
-
-//    private fun sendEmail() {
-//        val recipient = "vigorlankapvtltd@gmail.com"
-//        val recepients : Array<String> = recipient.split(",").toTypedArray()
-//         val subject = setSpinner()
-//         val name = name.text.toString()
-//         val email = email.text.toString()
-//         val phoneNo = phoneNumber.text.toString()
-//         val contactMethodEmaail = contactMethodEmail.text.toString()
-//         val contactMethdPhone = contactMethodPhone.text.toString()
-//         val message =
-//             "$name \n $email \n $phoneNo \n contact method $contactMethodEmaail$contactMethdPhone"
-//           " \n " +  message.text.toString()
-//
-//        val intent : Intent = Intent(Intent.ACTION_SEND)
-//        intent.putExtra(Intent.EXTRA_EMAIL, recepients)
-//        intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-//        intent.putExtra(Intent.EXTRA_TEXT, name)
-//        intent.putExtra(Intent.EXTRA_TEXT, email)
-//        intent.putExtra(Intent.EXTRA_TEXT, phoneNo)
-//        intent.putExtra(Intent.EXTRA_TEXT, contactMethodEmaail)
-//        intent.putExtra(Intent.EXTRA_TEXT, contactMethdPhone)
-//        intent.putExtra(Intent.EXTRA_TEXT, message)
-//
-//        intent.setType("message/rfc822")
-//        // intent.setType("text/plain");
-//
-//        //startActivity(Intent.createChooser(intent, "Choose the email client."))
-//
-//        try {
-//            startActivity(Intent.createChooser(intent, "Choose the email client."))
-//            finish()
-//            Log.i("Email", "")
-//        } catch (ex: ActivityNotFoundException) {
-//            Toast.makeText(
-//                this@ContactActivity,
-//                "There is no email client installed.",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-//
-//
-//    }
 
     private fun setSpinner(): String{
 

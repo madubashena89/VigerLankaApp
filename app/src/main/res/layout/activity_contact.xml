@@ -173,8 +173,8 @@
 
         <EditText
             android:id="@+id/tv_contact_email"
-            android:layout_width="240dp"
-            android:layout_height="29dp"
+            android:layout_width="243dp"
+            android:layout_height="34dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Please type your email address here.."
@@ -212,8 +212,8 @@
 
         <EditText
             android:id="@+id/tvt_contact_name"
-            android:layout_width="239dp"
-            android:layout_height="29dp"
+            android:layout_width="240dp"
+            android:layout_height="34dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Please enter name/company "
@@ -239,6 +239,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:ems="10"
+            android:hint="Please enter phone number with country code"
             android:inputType="textPersonName"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="@+id/tv_contact_email"
