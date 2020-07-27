@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import top.stores.vigerlankaapp.fragments.ContactFragment
 import top.stores.vigerlankaapp.fragments.HomeFragment
 import top.stores.vigerlankaapp.fragments.PeopleFragment
 
