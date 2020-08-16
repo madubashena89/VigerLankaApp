@@ -16,6 +16,9 @@ class ContactActivity : AppCompatActivity() {
     private  lateinit var contactMethod : CheckBox
     private  lateinit var message : EditText
     private lateinit var spinner : Spinner
+    private lateinit var spinnerText : String
+    private lateinit var sendBtn : Button
+   private lateinit var contactMethodText : String
 
 
 
@@ -30,21 +33,25 @@ class ContactActivity : AppCompatActivity() {
 
         message = findViewById(R.id.tv_contact_message_act)
         spinner = findViewById<Spinner>(R.id.spinner_select)
+        sendBtn = findViewById<Button>(R.id.btn_contact_send)
 
-        val contactReason = resources.getStringArray(R.array.contact_reason)
+        setSpinner()
 
-        if (spinner != null) {
-            val adapter = ArrayAdapter(this,
-                android.R.layout.simple_spinner_item, contactReason)
-            spinner.adapter = adapter
-        val spinnerText = spinner.selectedItem.toString()
 
-        val sendBtn = findViewById<Button>(R.id.btn_contact_send)
+//        if (contactMethod != null) {
+//              if(contactMethod.isChecked){
+//                  contactMethod.text.toString()
+//              }else {
+//                  contactMethodText = ""
+//                  contactMethod.text = contactMethodText
+//
+//              }
+//        }
+
         sendBtn.setOnClickListener {
             sendEmail(spinnerText, name.text.toString(),email.text.toString(), phoneNumber.text.toString(),
-                 contactMethod.text.toString(), message.text.toString() )
+                contactMethod.text.toString(), message.text.toString() )
         }
-      }
     }
 
 
@@ -79,21 +86,30 @@ class ContactActivity : AppCompatActivity() {
 
 
 
-    private fun setSpinner(): String{
+    private fun setSpinner() {
+         val contactReason = resources.getStringArray(R.array.contact_reason)
 
-        var contactReason = ""
-        spinner.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-               contactReason = getString(contactReason[1].toInt())
-            }
+        if (spinner != null) {
+            val adapter = ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, contactReason)
+            spinner.adapter = adapter
 
-            override fun onItemSelected(parent: AdapterView<*>,
-                                        view: View, position: Int, id: Long) {
-              contactReason = getString(contactReason[position].toInt())
+            spinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    spinnerText = getString(contactReason[1].toInt())
+                }
+
+                override fun onItemSelected(parent: AdapterView<*>,
+                                            view: View, position: Int, id: Long) {
+                    spinnerText = spinner.selectedItem.toString()
+
+                }
             }
         }
-        return contactReason
     }
+
+
+
 
 }
